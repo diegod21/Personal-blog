@@ -12,11 +12,13 @@
         <p>fewf</p>
     </nav>
         <div class="container d-flex flex-column justify-content-center w-25 bg-dark h-75">
-            <input type="text" name="name" id="name" placeholder="Nome" class="mb-3" >
-            <input type="email" name="email" id="email" placeholder="E-mail" class="mb-3" >
-            <input type="password" name="keypass" id="keypass" placeholder="Senha" class="mb-3" >
-            <button class="btn btn-success mb-3">Registrar</button>
-            <button class="btn btn-danger">Login</button>
+            <form action="/signUp" method="post">
+                <input type="text" name="name" id="name" placeholder="Nome" class="mb-3" >
+                <input type="email" name="email" id="email" placeholder="E-mail" class="mb-3" >
+                <input type="password" name="keypass" id="keypass" placeholder="Senha" class="mb-3" >
+                <button type="submit" class="btn btn-success mb-3">Registrar</button>
+            </form>
+            <a class="btn btn-danger" href="login.html">Login</a>
         </div>
 </body>
 </html>
