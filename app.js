@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const path = require("path")
 const PORT = 2121;
-const section = require('express-session')
-app.use(express.json());
 const session = require('express-session');
+
+app.use(express.json());
+app.use(express.static('public/images'));
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: 'd21193809',
