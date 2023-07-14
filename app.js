@@ -4,8 +4,9 @@ const path = require("path")
 const PORT = 2121;
 const session = require('express-session');
 
+
+app.use(express.static(path.join(__dirname, '/public/images/index.back.jpg')));
 app.use(express.json());
-app.use(express.static('public/images'));
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: 'd21193809',
@@ -17,9 +18,6 @@ app.get('/', (req,res)=>{
     
   const indexPath = path.join(__dirname, 'views', 'signUp.html')
   res.sendFile(indexPath)
-})
-app.listen(PORT,()=>{
-console.log(`Server Running at the Port ${PORT}`)
 })
 
 app.post('/signUp', (req,res)=>{
@@ -50,3 +48,7 @@ app.get('/index', (req,res)=>{
   const indexPath = path.join(__dirname, 'views', 'index.html');
     res.sendFile(indexPath);
 })
+
+app.listen(PORT,()=>{
+  console.log(`Server Running at the Port ${PORT}`)
+  })
